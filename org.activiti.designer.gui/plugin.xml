@@ -31,15 +31,15 @@
             id="org.activiti.designer.ActivitiImageProvider">
       </imageProvider>
    </extension>
-   <extension
+  <!-- <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="BPMNdiagram.PropertyContributor">
          <propertyCategory
                category="Activiti"></propertyCategory>
       </propertyContributor>
-   </extension>
-   <extension
+   </extension>-->
+  <!-- <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs
             contributorId="BPMNdiagram.PropertyContributor">
@@ -101,14 +101,14 @@
                category="Activiti"
                id="org.activiti.designer.messageTab" 
                label="Messages">
-         </propertyTab>
+         </propertyTab>-->
          <!-- <propertyTab
                afterTab="org.activiti.designer.listenerTab"
                category="Activiti"
                id="org.activiti.designer.eventListenerTab"
                label="Event Listeners">
          </propertyTab> -->
-         
+ <!--        
       </propertyTabs>
    </extension>
    <extension
@@ -338,16 +338,16 @@
                filter="org.activiti.designer.property.PropertyDocumentationFilter"
                id="org.activiti.designer.documentationTab.documentation"
                tab="org.activiti.designer.documentationTab">
-         </propertySection>
+         </propertySection>-->
          <!-- <propertySection
                class="org.activiti.designer.property.PropertyEventListenersSection"
                filter="org.activiti.designer.property.PropertyEventListenersFilter"
                id="org.activiti.designer.eventListenerTab.eventListenersSection"
                tab="org.activiti.designer.eventListenerTab">
          </propertySection> -->
-         
+ <!--        
       </propertySections>
-   </extension>
+   </extension>-->
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
