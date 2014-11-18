@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.jar.Manifest;
 
 import org.activiti.bpmn.model.CustomProperty;
@@ -384,6 +385,20 @@ public final class ExtensionUtil {
 
     return result;
   }
+  
+  //hack to allow our plugin to override this
+  public static Callable<List<CustomServiceTaskContext>> customServiceTasksCallback;
+  
+  public static List<CustomServiceTaskContext> getCustomServiceTaskContexts(final IProject project) {
+	  if (customServiceTasksCallback!=null) {
+		  try {
+			return customServiceTasksCallback.call();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	  }
+	  return getCustomServiceTaskContextsOld(project);
+  }
 
   /**
    * Gets a list of {@link CustomServiceTaskContext} objects based on the
@@ -395,7 +410,7 @@ public final class ExtensionUtil {
    *         object found or an empty list if {@link CustomServiceTask}s were
    *         found were found
    */
-  public static List<CustomServiceTaskContext> getCustomServiceTaskContexts(final IProject project) {
+  public static List<CustomServiceTaskContext> getCustomServiceTaskContextsOld(final IProject project) {
 
     List<CustomServiceTaskContext> result = new ArrayList<CustomServiceTaskContext>();
 

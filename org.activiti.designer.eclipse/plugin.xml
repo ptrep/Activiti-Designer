@@ -63,7 +63,7 @@
             id="org.activiti.designer.eclipse.common.ActivitiImageProvider">
       </imageProvider>
    </extension>
-   <extension
+ <!--  <extension
          point="org.eclipse.ui.editors">
    <editor
          class="org.activiti.designer.eclipse.editor.ActivitiDiagramEditor"
@@ -78,7 +78,7 @@
             contentTypeId="org.activiti.designer.editor.diagram.contenttype">
       </contentTypeBinding>
    </editor>
-   </extension>
+   </extension>-->
  <extension
        point="org.eclipse.wst.xml.core.catalogContributions">
        <catalogContribution> 
@@ -148,7 +148,7 @@
       name="Activiti Explorer">
     </view>
     
-    <category
+   <!-- <category
       id="org.activiti.designer.eclipse.view"
       name="Activiti">
     </category>
@@ -159,7 +159,7 @@
           id="org.activiti.designer.eclipse.activiticloudeditor.view"
           name="Activiti Cloud Editor"
           restorable="true">
-    </view>
+    </view>-->
     
   </extension>
   
