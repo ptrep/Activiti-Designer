@@ -10,7 +10,7 @@
             type="BPMNdiagram">
       </diagramType>
    </extension>
-   <extension
+ <!--  <extension
          point="org.eclipse.graphiti.ui.diagramTypeProviders">
       <diagramTypeProvider
             class="org.activiti.designer.diagram.ActivitiBPMNDiagramTypeProvider"
@@ -23,7 +23,7 @@
                id="org.activiti.designer.ActivitiImageProvider">
          </imageProvider>
       </diagramTypeProvider>
-   </extension>
+   </extension>-->
    <extension
          point="org.eclipse.graphiti.ui.imageProviders">
       <imageProvider
