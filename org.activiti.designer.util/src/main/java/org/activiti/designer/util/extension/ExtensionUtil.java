@@ -60,6 +60,7 @@ public final class ExtensionUtil {
   public static final String DESIGNER_EXTENSIONS_USER_LIB_PATH = "org.eclipse.jdt.USER_LIBRARY/" + USER_LIBRARY_NAME_EXTENSIONS;
 
   public static List<CustomServiceTaskDescriptor> providedCustomServiceTaskDescriptors;
+  public static List<CustomServiceTaskContext> providedCustomServiceTasks;
   
   private ExtensionUtil() {
 
@@ -70,6 +71,12 @@ public final class ExtensionUtil {
       providedCustomServiceTaskDescriptors = new ArrayList<CustomServiceTaskDescriptor>();
     providedCustomServiceTaskDescriptors.addAll(descriptors);
   }
+  
+  public static void addProvidedCustomServiceTasks(List<CustomServiceTaskContext> descriptors) {
+		if (providedCustomServiceTasks == null)
+			providedCustomServiceTasks = new ArrayList<CustomServiceTaskContext>();
+		providedCustomServiceTasks.addAll(descriptors);
+	}
 
   public static final Set<PaletteEntry> getDisabledPaletteEntries(IProject project) {
 
@@ -529,6 +536,9 @@ public final class ExtensionUtil {
   }
 
   private static void addToCustomServiceTasks(List<CustomServiceTaskContext> result) {
+	  if (providedCustomServiceTasks!=null) {
+		  result.addAll(providedCustomServiceTasks);
+	  }
     if (providedCustomServiceTaskDescriptors != null) {
       for (CustomServiceTaskDescriptor dscr : providedCustomServiceTaskDescriptors) {
         Class< ? extends CustomServiceTask> clazz = dscr.getClazz();
@@ -543,4 +553,6 @@ public final class ExtensionUtil {
       }
     }
   }
+  
+  
 }
